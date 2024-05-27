@@ -20,15 +20,15 @@
                 </p>
                 <div>
                     <strong>{% trans "Title" %}</strong>: 
-                    {{ position.title }}
+                    {{ module.title }}
                 </div>
                 <div>
                     <strong>{% trans "Created at" %}</strong>: 
-                    {{ position.created_at|date:"d.m.Y, H:i" }}
+                    {{ module.created_at|date:"d.m.Y, H:i" }}
                 </div>
                 <div>
                     <strong>{% trans "Updated at" %}</strong>: 
-                    {{ position.updated_at|date:"d.m.Y, H:i" }}
+                    {{ module.updated_at|date:"d.m.Y, H:i" }}
                 </div>
             </div>
             <div class="card-footer border-danger bg-white">

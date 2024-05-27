@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>{{ title }}</h1>
-                <a class="btn btn-primary btn-lg" href="{% url "members-position-create" %}"><i class="demo-icon icon-plus"></i></a>
+                <a class="btn btn-primary btn-lg" href="{% url "members-module-create" %}"><i class="demo-icon icon-plus"></i></a>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 {% block main %}
     <div>
-        {% include "members/position/partials/_list_table.html" %}
+        {% include "members/module/partials/_list_table.html" %}
     </div>
 {%  endblock %}
 

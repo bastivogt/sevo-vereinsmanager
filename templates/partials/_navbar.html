@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link{% if "position" in request.path %} active{% endif %}"{% if "position" in request.path %} aria-current="page"{% endif %} href="{% url "members-position-index" %}">{% trans "Positions" %}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if "module" in request.path %} active{% endif %}"{% if "module" in request.path %} aria-current="page"{% endif %} href="{% url "members-module-index" %}">{% trans "Modules" %}</a>
+                </li>
                 {% endif %}
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">

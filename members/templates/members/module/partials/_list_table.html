@@ -10,17 +10,17 @@
         </tr>
         </thead>
         <tbody>
-            {% for position in positions %}
+            {% for module in modules %}
                 <tr>
                     <th scope="row" class="w-50">
-                        {{ position.title }}
+                        {{ module.title }}
                     </th>
-                    <td class="w-25"><time><small><i>{{ position.created_at|date:"d.m.Y, H:i" }}</i></small></time></td>
-                    <td class="w-25"><time><small><i>{{ position.updated_at|date:"d.m.Y, H:i" }}</i></small></time></td>
+                    <td class="w-25"><time><small><i>{{ module.created_at|date:"d.m.Y, H:i" }}</i></small></time></td>
+                    <td class="w-25"><time><small><i>{{ module.updated_at|date:"d.m.Y, H:i" }}</i></small></time></td>
                     <td class="w-auto">
                         <div class="d-flex justify-content-center align-content-center">
-                            <a class="btn btn-primary btn-sm d-block m-1" href="{% url "members-position-update" id=position.id %}"><i class="demo-icon icon-pencil"></i></a>
-                            <a class="btn btn-danger btn-sm d-block m-1" href="{% url "members-position-delete" id=position.id %}"><i class="demo-icon icon-trash"></i></a>
+                            <a class="btn btn-primary btn-sm d-block m-1" href="{% url "members-module-update" id=module.id %}"><i class="demo-icon icon-pencil"></i></a>
+                            <a class="btn btn-danger btn-sm d-block m-1" href="{% url "members-module-delete" id=module.id %}"><i class="demo-icon icon-trash"></i></a>
                         </div>
                     </td>
                 </tr>

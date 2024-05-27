@@ -18,11 +18,11 @@ class GenderForm(forms.ModelForm):
         }
 
 
-# GenderForm
+# PositionForm
 class PositionForm(forms.ModelForm):
     
     class Meta:
-        model = models.Gender
+        model = models.Position
         fields = "__all__"
         labels = {
             "title": _("Title")
@@ -30,4 +30,19 @@ class PositionForm(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"})
         }
-        
+
+
+
+
+# ModuleForm
+class ModuleForm(forms.ModelForm):
+    
+    class Meta:
+        model = models.Module
+        fields = "__all__"
+        labels = {
+            "title": _("Title")
+        }
+        widgets = {
+            "title": forms.TextInput(attrs={"class": "form-control"})
+        }

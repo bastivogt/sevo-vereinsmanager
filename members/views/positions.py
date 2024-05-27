@@ -16,7 +16,7 @@ def index(request):
 
     return render(request, "members/position/index.html", {
         "title": _("All positions"),
-        "genders": positions
+        "positions": positions
     })
 
 
@@ -25,7 +25,7 @@ def index(request):
 login_required(login_url="sevo-auth-login")
 def create(request):
     if request.method == "POST":
-        form = forms.GenderForm(request.POST)
+        form = forms.PositionForm(request.POST)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, _("New position was created!"))
@@ -35,7 +35,7 @@ def create(request):
             messages.add_message(request, messages.ERROR, _("Failed, position was not created!"))
 
     else:
-        form = forms.GenderForm()
+        form = forms.PositionForm()
 
     return render(request, "members/position/create_update.html",  {
         "title": _("Create new position"),
@@ -50,7 +50,7 @@ login_required(login_url="sevo-auth-login")
 def update(request, id):
     position = get_object_or_404(models.Position, id=id)
     if request.method == "POST":
-        form = forms.GenderForm(request.POST, instance=position)
+        form = forms.PositionForm(request.POST, instance=position)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, _("New position was created!"))
@@ -60,9 +60,9 @@ def update(request, id):
             messages.add_message(request, messages.ERROR, _("Failed, position was not created!"))
 
     else:
-        form = forms.GenderForm(instance=position)
+        form = forms.PositionForm(instance=position)
 
-    return render(request, "members/gender/create_update.html",  {
+    return render(request, "members/position/create_update.html",  {
         "title": _("Create new position"),
         "form": form,
         "submit_label": _("Update")
@@ -78,12 +78,12 @@ def delete(request, id):
     if request.method == "POST":
         position.delete()
         messages.add_message(request, messages.SUCCESS, _("Position was deleted!"))
-        url = reverse("members-gender-index")
+        url = reverse("members-position-index")
         return HttpResponseRedirect(url)
     else:
         messages.add_message(request, messages.SUCCESS, _("Failed, position was not deleted!"))
     return render(request, "members/position/delete.html", {
-        "title": _("Delete gender"),
-        "gender": position
+        "title": _("Delete position"),
+        "position": position
     })
 
