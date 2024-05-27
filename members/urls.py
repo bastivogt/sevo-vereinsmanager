@@ -4,6 +4,7 @@ from members.views import members
 from members.views import genders
 from members.views import positions
 from members.views import modules
+from members.views import licenses
 
 urlpatterns = [
     # member
@@ -27,5 +28,12 @@ urlpatterns = [
     path("module/create", modules.create, name="members-module-create"),
     path("module/update/<int:id>", modules.update, name="members-module-update"),
     path("module/delete/<int:id>", modules.delete, name="members-module-delete"),
+
+
+    # license
+    path("licenses/", licenses.index, name="members-license-index"),
+    path("license/create", licenses.create, name="members-license-create"),
+    path("license/update/<int:id>", licenses.update, name="members-license-update"),
+    path("license/delete/<int:id>", licenses.delete, name="members-license-delete"),
 
 ]

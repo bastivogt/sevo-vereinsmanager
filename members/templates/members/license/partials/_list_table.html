@@ -1,0 +1,30 @@
+{% load i18n %}
+<div class="table-responsive">
+    <table class="table table-bordered align-middle">
+        <thead class="table-light">
+        <tr>
+            <th scope="col">{% trans "Title" %}</th>
+            <th scope="col">{% trans "Created at" %}</th>
+            <th scope="col">{% trans "Updated at" %}</th>
+            <th scope="col">{% trans "Actions" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for license in licenses %}
+                <tr>
+                    <th scope="row" class="w-50">
+                        {{ license.title }}
+                    </th>
+                    <td class="w-25"><time><small><i>{{ license.created_at|date:"d.m.Y, H:i" }}</i></small></time></td>
+                    <td class="w-25"><time><small><i>{{ license.updated_at|date:"d.m.Y, H:i" }}</i></small></time></td>
+                    <td class="w-auto">
+                        <div class="d-flex justify-content-center align-content-center">
+                            <a class="btn btn-primary btn-sm d-block m-1" href="{% url "members-license-update" id=license.id %}"><i class="demo-icon icon-pencil"></i></a>
+                            <a class="btn btn-danger btn-sm d-block m-1" href="{% url "members-license-delete" id=license.id %}"><i class="demo-icon icon-trash"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

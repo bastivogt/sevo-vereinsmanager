@@ -46,3 +46,17 @@ class ModuleForm(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"})
         }
+
+
+# LicenseForm
+class LicenseForm(forms.ModelForm):
+    
+    class Meta:
+        model = models.License
+        fields = "__all__"
+        labels = {
+            "title": _("Title")
+        }
+        widgets = {
+            "title": forms.TextInput(attrs={"class": "form-control"})
+        }
