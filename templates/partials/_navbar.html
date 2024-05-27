@@ -24,6 +24,9 @@
                 <li class="nav-item">
                     <a class="nav-link{% if "license" in request.path %} active{% endif %}"{% if "license" in request.path %} aria-current="page"{% endif %} href="{% url "members-license-index" %}">{% trans "Licenses" %}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if "tariff" in request.path %} active{% endif %}"{% if "tariff" in request.path %} aria-current="page"{% endif %} href="{% url "members-tariff-index" %}">{% trans "Tariffs" %}</a>
+                </li>
                 {% endif %}
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">

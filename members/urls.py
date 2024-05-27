@@ -5,6 +5,7 @@ from members.views import genders
 from members.views import positions
 from members.views import modules
 from members.views import licenses
+from members.views import tariffs
 
 urlpatterns = [
     # member
@@ -35,5 +36,12 @@ urlpatterns = [
     path("license/create", licenses.create, name="members-license-create"),
     path("license/update/<int:id>", licenses.update, name="members-license-update"),
     path("license/delete/<int:id>", licenses.delete, name="members-license-delete"),
+
+
+    # tariff
+    path("tariffs/", tariffs.index, name="members-tariff-index"),
+    path("tariff/create", tariffs.create, name="members-tariff-create"),
+    path("tariff/update/<int:id>", tariffs.update, name="members-tariff-update"),
+    path("tariff/delete/<int:id>", tariffs.delete, name="members-tariff-delete"),
 
 ]

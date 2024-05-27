@@ -60,3 +60,21 @@ class LicenseForm(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"})
         }
+
+
+
+# TariffForm
+class TariffForm(forms.ModelForm):
+    
+    class Meta:
+        model = models.Tariff
+        fields = "__all__"
+        labels = {
+            "title": _("Title"),
+            "amount": _("Amount")
+        }
+        widgets = {
+            "title": forms.TextInput(attrs={"class": "form-control"}),
+            "amount": forms.NumberInput(attrs={"class": "form-control"})
+        }
+
