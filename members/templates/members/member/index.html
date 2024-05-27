@@ -1,0 +1,45 @@
+{% extends "base_sidebar.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block header %}
+    <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>HEADER</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2>MAIN</h2>
+    </div>
+{%  endblock %}
+
+{% block side %}
+    <div id="filter-section">
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5>
+                    {% trans "Filter" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <h3>FILTER</h3>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static "js/filter.js" %}"></script>
+{% endblock %}
