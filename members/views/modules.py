@@ -53,11 +53,11 @@ def update(request, id):
         form = forms.ModuleForm(request.POST, instance=module)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, _("New module was created!"))
+            messages.add_message(request, messages.SUCCESS, _("Module was updated!"))
             url = reverse("members-module-index")
             return HttpResponseRedirect(url)
         else:
-            messages.add_message(request, messages.ERROR, _("Failed, module was not created!"))
+            messages.add_message(request, messages.ERROR, _("Failed, module was not updated!"))
 
     else:
         form = forms.ModuleForm(instance=module)

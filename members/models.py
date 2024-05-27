@@ -85,14 +85,14 @@ class Member(models.Model):
     postal_code = models.CharField(max_length=50)
     country = models.CharField(max_length=255)
 
-    email = models.EmailField()
-    phone = models.CharField(max_length=50)
+    email = models.EmailField(blank=True)
+    phone = models.CharField(max_length=50, blank=True)
 
-    legal_representative = models.TextField()
+    legal_representative = models.TextField(blank=True)
 
     bankname = models.CharField(max_length=255)
     iban = models.CharField(max_length=50)
-    bic = models.CharField(max_length=50)
+    bic = models.CharField(max_length=50, blank=True)
 
     positions = models.ManyToManyField(Position, blank=True)
     modules = models.ManyToManyField(Module, blank=True)

@@ -53,11 +53,11 @@ def update(request, id):
         form = forms.LicenseForm(request.POST, instance=license)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, _("New license was created!"))
+            messages.add_message(request, messages.SUCCESS, _("License was updated!"))
             url = reverse("members-license-index")
             return HttpResponseRedirect(url)
         else:
-            messages.add_message(request, messages.ERROR, _("Failed, license was not created!"))
+            messages.add_message(request, messages.ERROR, _("Failed, license was not updated!"))
 
     else:
         form = forms.LicenseForm(instance=license)

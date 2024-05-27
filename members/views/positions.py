@@ -53,11 +53,11 @@ def update(request, id):
         form = forms.PositionForm(request.POST, instance=position)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, _("New position was created!"))
+            messages.add_message(request, messages.SUCCESS, _("Position was updated!"))
             url = reverse("members-position-index")
             return HttpResponseRedirect(url)
         else:
-            messages.add_message(request, messages.ERROR, _("Failed, position was not created!"))
+            messages.add_message(request, messages.ERROR, _("Failed, position was not updated!"))
 
     else:
         form = forms.PositionForm(instance=position)
