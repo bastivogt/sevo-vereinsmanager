@@ -10,6 +10,13 @@
             <th scope="col">{% trans "Modules" %}</th>
             <th scope="col">{% trans "Positions" %}</th>
             <th scope="col">{% trans "Tariff" %}</th>
+            <th scope="col">
+                <div class="d-flex justify-content-end">
+                    <div>
+                        {% trans "Amount" %}
+                    </div>
+                </div>
+            </th>
             <th scope="col">{% trans "Actions" %}</th>
         </tr>
         </thead>
@@ -22,7 +29,14 @@
                     <td class="w-auto">{{ member.gender }}</td>
                     <td class="w-auto">{{ member.get_modules_str }}</td>
                     <td class="w-auto">{{ member.get_positions_str }}</td>
-                    <td class="w-auto">{{ member.tariff }}</td>
+                    <td class="w-auto">{{ member.tariff.title }}</td>
+                    <td class="w-auto">
+                        <div class="d-flex justify-content-end">
+                            <div>
+                                {{ member.tariff.amount }}
+                            </div>
+                        </div>
+                    </td>
                     <td class="w-auto">
                         <div class="d-flex justify-content-start align-content-center">
                             <a class="btn btn-primary btn-sm d-block m-1" href="{% url "members-member-detail" id=member.id %}"><i class="demo-icon icon-info"></i></a>
