@@ -27,7 +27,7 @@ def index(request):
 
 
 # create
-login_required(login_url="sevo-auth-login")
+@login_required(login_url="sevo-auth-login")
 def create(request):
     if request.method == "POST":
         form = forms.MemberForm(request.POST)
@@ -50,7 +50,7 @@ def create(request):
 
 
 # update
-login_required(login_url="sevo-auth-login")
+@login_required(login_url="sevo-auth-login")
 def update(request, id):
     member = get_object_or_404(models.Member, id=id)
     if request.method == "POST":
@@ -74,6 +74,7 @@ def update(request, id):
 
 
 # detail
+@login_required(login_url="sevo-auth-login")
 def detail(request, id):
     member = get_object_or_404(models.Member, id=id)
     return render(request, "members/member/detail.html", {

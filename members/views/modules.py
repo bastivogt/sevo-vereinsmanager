@@ -10,7 +10,7 @@ from members import forms
 
 
 # index
-login_required(login_url="sevo-auth-login")
+@login_required(login_url="sevo-auth-login")
 def index(request):
     modules = models.Module.objects.all()
 
@@ -22,7 +22,7 @@ def index(request):
 
 
 # create
-login_required(login_url="sevo-auth-login")
+@login_required(login_url="sevo-auth-login")
 def create(request):
     if request.method == "POST":
         form = forms.ModuleForm(request.POST)
@@ -46,7 +46,7 @@ def create(request):
 
 
 # update
-login_required(login_url="sevo-auth-login")
+@login_required(login_url="sevo-auth-login")
 def update(request, id):
     module = get_object_or_404(models.Module, id=id)
     if request.method == "POST":
