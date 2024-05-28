@@ -95,6 +95,7 @@ class MemberForm(forms.ModelForm):
             "street": _("Street"),
             "house_number": _("House number"),
             "postal_code": _("Postal code"),
+            "city": _("City"),
             "country": _("Country"),
 
             "email": _("Email"),
@@ -124,12 +125,13 @@ class MemberForm(forms.ModelForm):
         widgets = {
             "firstname": forms.TextInput(attrs={"class": "form-control"}),
             "lastname": forms.TextInput(attrs={"class": "form-control"}),
-            "birthday": forms.DateInput(attrs={"class": "form-control"}),
+            "birthday": forms.DateInput(format=("%Y-%m-%d"), attrs={"class": "form-control", "placeholder": _("Choose a date"), "type":"date"}),
             "gender": forms.Select(attrs={"class": "form-select"}),
 
             "street": forms.TextInput(attrs={"class": "form-control"}),
             "house_number": forms.TextInput(attrs={"class": "form-control"}),
             "postal_code": forms.TextInput(attrs={"class": "form-control"}),
+            "city": forms.TextInput(attrs={"class": "form-control"}),
             "country": forms.TextInput(attrs={"class": "form-control"}),
 
             "email": forms.EmailInput(attrs={"class": "form-control"}),
@@ -145,6 +147,8 @@ class MemberForm(forms.ModelForm):
             "modules": forms.SelectMultiple(attrs={"class": "form-select"}),
             "licenses": forms.SelectMultiple(attrs={"class": "form-select"}),
             "tariff": forms.Select(attrs={"class": "form-select"}),
+            "entry_date": forms.DateInput(format=("%Y-%m-%d"), attrs={"class": "form-control", "placeholder": _("Choose a date"), "type":"date"}),
+
 
             "chronic_diseases": forms.Textarea(attrs={"class": "form-control"}),
             "permanent_medication": forms.Textarea(attrs={"class": "form-control"}),

@@ -19,8 +19,12 @@
 {% endblock %}
 
 {% block main %}
+    {% if licenses %}
     <div>
         {% include "members/license/partials/_list_table.html" %}
     </div>
+    {% else %}
+        <p>{% trans "No licenses available." %}</p>
+    {% endif %}
 {%  endblock %}
 

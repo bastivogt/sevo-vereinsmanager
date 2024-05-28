@@ -53,7 +53,7 @@ def update(request, id):
         form = forms.GenderForm(request.POST, instance=gender)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, _("New gender was created!"))
+            messages.add_message(request, messages.SUCCESS, _("Gender was created!"))
             url = reverse("members-gender-index")
             return HttpResponseRedirect(url)
         else:
@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.GenderForm(instance=gender)
 
     return render(request, "members/gender/create_update.html",  {
-        "title": _("Create new gender"),
+        "title": _("update gender"),
         "form": form,
         "submit_label": _("Update")
     })

@@ -19,8 +19,14 @@
 {% endblock %}
 
 {% block main %}
+    {% if tariffs %}
     <div>
         {% include "members/tariff/partials/_list_table.html" %}
     </div>
+    {% else %}
+        <p>
+            {% trans "No tariffs available." %}
+        </p>
+    {% endif %}
 {%  endblock %}
 

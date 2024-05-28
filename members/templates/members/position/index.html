@@ -19,8 +19,14 @@
 {% endblock %}
 
 {% block main %}
+    {% if positions %}
     <div>
         {% include "members/position/partials/_list_table.html" %}
     </div>
+    {% else %}
+        <p>
+            {% trans "No positions available." %}
+        </p>
+    {% endif %}
 {%  endblock %}
 

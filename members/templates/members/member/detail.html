@@ -1,0 +1,27 @@
+{% extends "base_main.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+
+{% block main %}
+    <div class="card">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="card-header">
+                <h2>{{ title }}</h2>
+            </div>
+            <div class="card-body">
+                DETAIL
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-start align-content-center">
+                    <button type="button" class="btn btn-primary back-link m-1"><i class="demo-icon icon-left"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+{%  endblock %}
