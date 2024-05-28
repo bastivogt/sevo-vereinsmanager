@@ -151,6 +151,9 @@ class Member(models.Model):
     
 
 
+    
+
+
     # def get_adult_with_child_rate(self):
     #     if self.rate.name == "Kind" and self.get_age() >= 18:
     #         return True

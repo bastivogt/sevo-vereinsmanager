@@ -2,26 +2,192 @@
 {% load i18n %}
 
 {% block title %}
-    {{ title }}
+    {{ member.get_fullname }}
 {% endblock %}
 
 
 
 {% block main %}
-    <div class="card">
-        <form action="" method="post">
-            {% csrf_token %}
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Person" %}</h2>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>{% trans "Firstname" %}: </strong>
+                {{ member.firstname }}
+            </div>
+            <div>
+                <strong>{% trans "Lastname" %}: </strong>
+                {{ member.lastname }}
+            </div>
+            <div>
+                <strong>{% trans "Birthday" %}: </strong>
+                {{ member.birthday|date:"d.m.Y" }}
+            </div>
+            <div>
+                <strong>{% trans "Age" %}: </strong>
+                {{ member.get_age }}
+            </div>
+            <div>
+                <strong>{% trans "Gender" %}: </strong>
+                {{ member.gender }}
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Adress" %}</h2>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>{% trans "Street" %}: </strong>
+                {{ member.street }}
+            </div>
+            <div>
+                <strong>{% trans "House number" %}: </strong>
+                {{ member.house_number }}
+            </div>
+            <div>
+                <strong>{% trans "Postal code" %}: </strong>
+                {{ member.postal_code }}
+            </div>
+            <div>
+                <strong>{% trans "Country" %}: </strong>
+                {{ member.country }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Contact" %}</h2>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>{% trans "Email" %}: </strong>
+                {{ member.email }}
+            </div>
+            <div>
+                <strong>{% trans "Phone" %}: </strong>
+                {{ member.phone }}
+            </div>
+        </div>
+    </div>
+
+    {% if legal_representative %}
+        <div class="card mb-3">
             <div class="card-header">
-                <h2>{{ member.get_fullname }}</h2>
+                <h2>{% trans "Legal representative" %}</h2>
             </div>
             <div class="card-body">
-                DETAIL
+                {{ legal_representativ|linebreaks }}
             </div>
-            <div class="card-footer">
-                <div class="d-flex justify-content-start align-content-center">
-                    <button type="button" class="btn btn-primary back-link m-1"><i class="demo-icon icon-left"></i></button>
-                </div>
+        </div>
+    {% endif %}
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Bank" %}</h2>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>{% trans "Bankname" %}: </strong>
+                {{ member.bankname }}
             </div>
-        </form>
+            <div>
+                <strong>{% trans "IBAN" %}: </strong>
+                {{ member.iban }}
+            </div>
+            <div>
+                <strong>{% trans "BIC" %}: </strong>
+                {{ member.bic }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Association" %}</h2>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>{% trans "Entry date" %}: </strong>
+                {{ member.entry_date|date:"d.m.Y"}}
+            </div>
+            <div>
+                <strong>{% trans "Positions" %}: </strong>
+                {{ member.get_positions_str }}
+            </div>
+            <div>
+                <strong>{% trans "Modules" %}: </strong>
+                {{ member.get_modules_str }}
+            </div>
+            <div>
+                <strong>{% trans "Licenses" %}: </strong>
+                {{ member.get_licenses_str }}
+            </div>
+            <div>
+                <strong>{% trans "Tariff" %}: </strong>
+                {{ member.tariff.title }}
+            </div>
+            <div>
+                <strong>{% trans "Amount" %}: </strong>
+                {{ member.tariff.amount }}
+            </div>
+        </div>
+    </div>
+
+    {% if member.chronic_diseases or member.permanet_medication %}
+        <div class="card mb-3">
+            <div class="card-header">
+                <h2>{% trans "Diseases" %}</h2>
+            </div>
+            <div class="card-body">
+                {% if member.chronic_diseases %}
+                    <div>
+                        <strong>{% trans "Chronic diseases" %}: </strong>
+                        {{ member.chronic_diseases|linebreaks }}  
+                    </div>
+                {% endif %}
+                {% if member.permanent_medication %}
+                    <div>
+                        <strong>{% trans "Permanent medication" %}: </strong>
+                        {{ member.permanent_medication|linebreaks }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Consents and active" %}</h2>
+        </div>
+        <div class="card-body">
+            <div>
+                <strong>{% trans "Is active" %}: </strong>
+                {% if member.is_active %}
+                    {% trans "Yes" %}
+                {% else %}
+                    {% trans "No" %}
+                {% endif %}
+            </div>
+            <div>
+                <strong>{% trans "Publish photos" %}: </strong>
+                {% if member.publish_fotos %}
+                    {% trans "Yes" %}
+                {% else %}
+                    {% trans "No" %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-start align-content-center">
+        <button type="button" class="btn btn-primary back-link"><i class="demo-icon icon-left"></i></button>
     </div>
 {%  endblock %}
