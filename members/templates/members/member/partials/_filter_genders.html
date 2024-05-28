@@ -1,0 +1,11 @@
+{% load i18n %}
+<ul>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="gender" data-filter-value="all">{% trans "All" %}</button>
+    </li>
+    {% for gender in genders %}
+        <li>
+            <button class="btn btn-link p-0 text-start" data-filter-key="gender" data-filter-value={{ gender.id }}>{{ gender.title }}</button>
+        </li>
+    {% endfor %}
+</ul>

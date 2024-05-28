@@ -1,0 +1,11 @@
+{% load i18n %}
+<ul>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="module" data-filter-value="all">{% trans "All" %}</button>
+    </li>
+    {% for module in modules %}
+        <li>
+            <button class="btn btn-link p-0 text-start" data-filter-key="module" data-filter-value={{ module.id }}>{{ module.title }}</button>
+        </li>
+    {% endfor %}
+</ul>

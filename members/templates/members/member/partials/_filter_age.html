@@ -1,0 +1,13 @@
+{% load i18n %}
+<ul>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="age" data-filter-value="all">{% trans "All" %}</button>
+    </li>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="age" data-filter-value="lt18">{% trans "Lower than 18" %}</button>
+    </li>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="age" data-filter-value="gte18">{% trans "Greater than or equals 18" %}</button>
+    </li>
+
+</ul>

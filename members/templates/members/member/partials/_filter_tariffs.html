@@ -1,0 +1,11 @@
+{% load i18n %}
+<ul>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="tariff" data-filter-value="all">{% trans "All" %}</button>
+    </li>
+    {% for tariff in tariffs %}
+        <li>
+            <button class="btn btn-link p-0 text-start" data-filter-key="tariff" data-filter-value={{ tariff.id }}>{{ tariff.title }}</button>
+        </li>
+    {% endfor %}
+</ul>

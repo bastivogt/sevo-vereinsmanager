@@ -7,6 +7,7 @@ from django.contrib import messages
 
 from members import models
 from members import forms
+from members.views.helper import filter
 
 
 
@@ -19,9 +20,23 @@ def redirect(request):
 @login_required(login_url="sevo-auth-login")
 def index(request):
     members = models.Member.objects.all()
+
+    positions = models.Position.objects.all()
+    modules = models.Module.objects.all()
+    tariffs = models.Tariff.objects.all()
+    licenses = models.License.objects.all()
+    genders = models.Gender.objects.all()
+
+    members = filter.filter(request, members)
+
     return render(request, "members/member/index.html", {
         "title": _("All members"),
-        "members": members
+        "members": members,
+        "positions": positions,
+        "modules": modules,
+        "tariffs": tariffs,
+        "licenses": licenses,
+        "genders": genders
     })
 
 
