@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.ModuleForm(instance=module)
 
     return render(request, "members/module/create_update.html",  {
-        "title": _("Create new module"),
+        "title": _("Update module"),
         "form": form,
         "submit_label": _("Update")
     })

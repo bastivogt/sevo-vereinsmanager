@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.TariffForm(instance=tariff)
 
     return render(request, "members/tariff/create_update.html",  {
-        "title": _("Create new tariff"),
+        "title": _("Update tariff"),
         "form": form,
         "submit_label": _("Update")
     })

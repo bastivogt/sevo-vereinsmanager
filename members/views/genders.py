@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.GenderForm(instance=gender)
 
     return render(request, "members/gender/create_update.html",  {
-        "title": _("update gender"),
+        "title": _("Update gender"),
         "form": form,
         "submit_label": _("Update")
     })

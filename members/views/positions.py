@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.PositionForm(instance=position)
 
     return render(request, "members/position/create_update.html",  {
-        "title": _("Create new position"),
+        "title": _("Update position"),
         "form": form,
         "submit_label": _("Update")
     })

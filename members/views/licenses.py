@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.LicenseForm(instance=license)
 
     return render(request, "members/license/create_update.html",  {
-        "title": _("Create new license"),
+        "title": _("Update license"),
         "form": form,
         "submit_label": _("Update")
     })
