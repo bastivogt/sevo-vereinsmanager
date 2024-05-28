@@ -9,7 +9,7 @@ from members.views import tariffs
 
 urlpatterns = [
     # member
-    path("", members.index, name="members-member-index"),
+    path("members/", members.index, name="members-member-index"),
     path("member/create", members.create, name="members-member-create"),
     path("member/update/<int:id>", members.update, name="members-member-update"),
     path("member/detail/<int:id>", members.detail, name="members-member-detail"),

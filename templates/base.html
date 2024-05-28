@@ -19,7 +19,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endfor %}
-    {% include "partials/_navbar.html" %}
+    {% include "partials/_navbar_drop_down.html" %}
 
     {% block content %}{% endblock %}
 
@@ -30,7 +30,7 @@
     </footer>
     
 
-    <script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.js" %}"></script>
     <script src="{% static "js/app.js" %}"></script>
     {% block js %}{% endblock %}
 </body>

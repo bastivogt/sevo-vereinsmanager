@@ -147,7 +147,7 @@ MESSAGE_TAGS = {
 
 
 # sevo_auth
-SEVO_AUTH_LOGIN_REDIRECT = "sevo-auth-user-detail"
+SEVO_AUTH_LOGIN_REDIRECT = "members-member-index"
 SEVO_AUTH_LOGOUT_REDIRECT = "sevo-auth-login"
 SEVO_AUTH_CAN_SIGN_UP = False
 

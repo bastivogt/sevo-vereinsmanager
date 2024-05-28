@@ -22,5 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", members.redirect, name="index"),
     path("sevo-auth/", include("sevo_auth.urls")),
-    path("members/", include("members.urls")),
+    path("mbrs/", include("members.urls")),
 ]
