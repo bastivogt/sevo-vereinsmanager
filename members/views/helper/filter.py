@@ -56,7 +56,7 @@ def filter(request, queryset):
 
 
     # age
-    if age_get != None and age_get != all:
+    if age_get != None and age_get != "all":
         if age_get == "lt18":
             qs = [item for item in qs if item.get_age() < 18]
         elif age_get == "gte18":
