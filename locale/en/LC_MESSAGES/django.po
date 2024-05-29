@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-27 18:22+0200\n"
+"POT-Creation-Date: 2024-05-29 01:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\templates\partials\_navbar.html:13
-msgid "Members"
-msgstr ""
 
-#: .\templates\partials\_navbar.html:20
+#: .\templates\partials\_navbar.html:13
+#: .\templates\partials\_navbar_drop_down.html:14
+#: .\templates\partials\_navbar_drop_down.html:18
+msgid "Members"
+msgstr "Members"
+
+#: .\templates\partials\_navbar.html:16
+#: .\templates\partials\_navbar_drop_down.html:21
+msgid "Genders"
+msgstr "Genders"
+
+#: .\templates\partials\_navbar.html:19
+#: .\templates\partials\_navbar_drop_down.html:24
+msgid "Positions"
+msgstr "Positions"
+
+#: .\templates\partials\_navbar.html:22
+#: .\templates\partials\_navbar_drop_down.html:27
+msgid "Modules"
+msgstr "Modules"
+
+#: .\templates\partials\_navbar.html:25
+#: .\templates\partials\_navbar_drop_down.html:30
+msgid "Licenses"
+msgstr "Licenses"
+
+#: .\templates\partials\_navbar.html:28
+#: .\templates\partials\_navbar_drop_down.html:33
+msgid "Tariffs"
+msgstr "Tariffs"
+
+#: .\templates\partials\_navbar.html:35
+#: .\templates\partials\_navbar_drop_down.html:44
 msgid "Hello"
-msgstr ""
+msgstr "Hello"

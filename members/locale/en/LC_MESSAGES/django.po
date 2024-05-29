@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-27 18:22+0200\n"
+"POT-Creation-Date: 2024-05-29 01:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,567 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: .\members\templates\members\member\index.html:31
-msgid "Filter tag"
+
+#: .\members\forms.py:14 .\members\forms.py:28 .\members\forms.py:44
+#: .\members\forms.py:58 .\members\forms.py:73
+#: .\members\templates\members\gender\delete.html:22
+#: .\members\templates\members\gender\partials\_list_table.html:6
+#: .\members\templates\members\license\delete.html:22
+#: .\members\templates\members\license\partials\_list_table.html:6
+#: .\members\templates\members\module\delete.html:22
+#: .\members\templates\members\module\partials\_list_table.html:6
+#: .\members\templates\members\position\delete.html:22
+#: .\members\templates\members\position\partials\_list_table.html:6
+#: .\members\templates\members\tariff\delete.html:22
+#: .\members\templates\members\tariff\partials\_list_table.html:6
+msgid "Title"
+msgstr ""
+
+#: .\members\forms.py:74 .\members\templates\members\member\detail.html:138
+#: .\members\templates\members\member\partials\_list_table.html:16
+#: .\members\templates\members\tariff\partials\_list_table.html:7
+msgid "Amount"
+msgstr ""
+
+#: .\members\forms.py:90 .\members\templates\members\member\detail.html:17
+#: .\members\templates\members\member\partials\_list_table.html:6
+msgid "Firstname"
+msgstr ""
+
+#: .\members\forms.py:91 .\members\templates\members\member\detail.html:21
+#: .\members\templates\members\member\partials\_list_table.html:7
+msgid "Lastname"
+msgstr ""
+
+#: .\members\forms.py:92 .\members\templates\members\member\detail.html:25
+msgid "Birthday"
+msgstr ""
+
+#: .\members\forms.py:93 .\members\templates\members\member\detail.html:33
+#: .\members\templates\members\member\partials\_list_table.html:9
+msgid "Gender"
+msgstr ""
+
+#: .\members\forms.py:95 .\members\templates\members\member\detail.html:45
+msgid "Street"
+msgstr ""
+
+#: .\members\forms.py:96 .\members\templates\members\member\detail.html:49
+msgid "House number"
+msgstr ""
+
+#: .\members\forms.py:97 .\members\templates\members\member\detail.html:53
+msgid "Postal code"
+msgstr ""
+
+#: .\members\forms.py:98
+msgid "City"
+msgstr ""
+
+#: .\members\forms.py:99 .\members\templates\members\member\detail.html:57
+msgid "Country"
+msgstr ""
+
+#: .\members\forms.py:101 .\members\templates\members\member\detail.html:70
+msgid "Email"
+msgstr ""
+
+#: .\members\forms.py:102 .\members\templates\members\member\detail.html:74
+msgid "Phone"
+msgstr ""
+
+#: .\members\forms.py:104
+msgid "Legal reprensentative"
+msgstr ""
+
+#: .\members\forms.py:106
+msgid "Bank name"
+msgstr ""
+
+#: .\members\forms.py:107 .\members\templates\members\member\detail.html:101
+msgid "IBAN"
+msgstr ""
+
+#: .\members\forms.py:108 .\members\templates\members\member\detail.html:105
+msgid "BIC"
+msgstr ""
+
+#: .\members\forms.py:110 .\members\templates\members\member\detail.html:122
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:19
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:28
+#: .\members\templates\members\member\partials\_list_table.html:11
+msgid "Positions"
+msgstr ""
+
+#: .\members\forms.py:111 .\members\templates\members\member\detail.html:126
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:6
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:16
+#: .\members\templates\members\member\partials\_list_table.html:10
+msgid "Modules"
+msgstr ""
+
+#: .\members\forms.py:112 .\members\templates\members\member\detail.html:130
+msgid "Licenses"
+msgstr ""
+
+#: .\members\forms.py:113 .\members\templates\members\member\detail.html:134
+#: .\members\templates\members\member\partials\_list_table.html:12
+msgid "Tariff"
+msgstr ""
+
+#: .\members\forms.py:115 .\members\templates\members\member\detail.html:152
+msgid "Chronic diseases"
+msgstr ""
+
+#: .\members\forms.py:116 .\members\templates\members\member\detail.html:158
+msgid "Permanent medication"
+msgstr ""
+
+#: .\members\forms.py:118
+msgid "Publish fotos"
+msgstr ""
+
+#: .\members\forms.py:119 .\members\templates\members\member\detail.html:172
+#: .\members\templates\members\member\partials\_filter_active.html:7
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:58
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:63
+msgid "Is active"
+msgstr ""
+
+#: .\members\forms.py:121 .\members\templates\members\gender\delete.html:26
+#: .\members\templates\members\gender\partials\_list_table.html:7
+#: .\members\templates\members\license\delete.html:26
+#: .\members\templates\members\license\partials\_list_table.html:7
+#: .\members\templates\members\module\delete.html:26
+#: .\members\templates\members\module\partials\_list_table.html:7
+#: .\members\templates\members\position\delete.html:26
+#: .\members\templates\members\position\partials\_list_table.html:7
+#: .\members\templates\members\tariff\delete.html:26
+#: .\members\templates\members\tariff\partials\_list_table.html:8
+msgid "Created at"
+msgstr ""
+
+#: .\members\forms.py:122 .\members\templates\members\gender\delete.html:30
+#: .\members\templates\members\gender\partials\_list_table.html:8
+#: .\members\templates\members\license\delete.html:30
+#: .\members\templates\members\license\partials\_list_table.html:8
+#: .\members\templates\members\module\delete.html:30
+#: .\members\templates\members\module\partials\_list_table.html:8
+#: .\members\templates\members\position\delete.html:30
+#: .\members\templates\members\position\partials\_list_table.html:8
+#: .\members\templates\members\tariff\delete.html:30
+#: .\members\templates\members\tariff\partials\_list_table.html:9
+msgid "Updated at"
+msgstr ""
+
+#: .\members\forms.py:128 .\members\forms.py:150
+msgid "Choose a date"
+msgstr ""
+
+#: .\members\templates\members\gender\delete.html:19
+#: .\members\templates\members\license\delete.html:19
+#: .\members\templates\members\module\delete.html:19
+#: .\members\templates\members\position\delete.html:19
+#: .\members\templates\members\tariff\delete.html:19
+msgid "Do you really want to delete this item?"
+msgstr ""
+
+#: .\members\templates\members\gender\index.html:27
+msgid "No genders available."
+msgstr ""
+
+#: .\members\templates\members\gender\partials\_list_table.html:9
+#: .\members\templates\members\license\partials\_list_table.html:9
+#: .\members\templates\members\member\partials\_list_table.html:20
+#: .\members\templates\members\module\partials\_list_table.html:9
+#: .\members\templates\members\position\partials\_list_table.html:9
+#: .\members\templates\members\tariff\partials\_list_table.html:10
+msgid "Actions"
+msgstr ""
+
+#: .\members\templates\members\license\index.html:27
+msgid "No licenses available."
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:13
+msgid "Person"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:29
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:85
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:86
+#: .\members\templates\members\member\partials\_list_table.html:8
+msgid "Age"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:41
+msgid "Adress"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:66
+msgid "Contact"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:83
+msgid "Legal representative"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:93
+msgid "Bank"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:97
+msgid "Bankname"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:114
+msgid "Association"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:118
+msgid "Entry date"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:147
+msgid "Diseases"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:168
+msgid "Consents and active"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:174
+#: .\members\templates\members\member\detail.html:182
+msgid "Yes"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:176
+#: .\members\templates\members\member\detail.html:184
+msgid "No"
+msgstr ""
+
+#: .\members\templates\members\member\detail.html:180
+#: .\members\templates\members\member\partials\_filter_publish_fotos.html:7
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:71
+msgid "Publish photos"
+msgstr ""
+
+#: .\members\templates\members\member\index.html:27
+msgid "No members available."
+msgstr ""
+
+#: .\members\templates\members\member\index.html:36
+msgid "Reset filters"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_filter_active.html:4
+#: .\members\templates\members\member\partials\_filter_age.html:4
+#: .\members\templates\members\member\partials\_filter_genders.html:4
+#: .\members\templates\members\member\partials\_filter_modules.html:4
+#: .\members\templates\members\member\partials\_filter_positions.html:4
+#: .\members\templates\members\member\partials\_filter_publish_fotos.html:4
+#: .\members\templates\members\member\partials\_filter_tariffs.html:4
+msgid "All"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_filter_active.html:10
+msgid "Not active"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_filter_age.html:7
+msgid "Lower than 18"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_filter_age.html:10
+msgid "Greater than or equals 18"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_filter_publish_fotos.html:10
+msgid "Not publish phots"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:32
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:40
+msgid "Tariffs"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_frontend_filter_accordion.html:45
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:52
+msgid "Genders"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:5
+msgid "Order by"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_frontend_filter_cards.html:74
+msgid "Publish Photos"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_order.html:4
+msgid "None"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_order.html:7
+msgid "Birthday ascending"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_order.html:10
+msgid "Birthday descending"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_order.html:13
+msgid "Entry date ascending"
+msgstr ""
+
+#: .\members\templates\members\member\partials\_order.html:16
+msgid "Entry date descending"
+msgstr ""
+
+#: .\members\templates\members\module\index.html:27
+msgid "No modules available."
+msgstr ""
+
+#: .\members\templates\members\position\index.html:28
+msgid "No positions available."
+msgstr ""
+
+#: .\members\templates\members\tariff\index.html:28
+msgid "No tariffs available."
+msgstr ""
+
+#: .\members\views\genders.py:18
+msgid "All genders"
+msgstr ""
+
+#: .\members\views\genders.py:31
+msgid "New gender was created!"
+msgstr ""
+
+#: .\members\views\genders.py:35 .\members\views\genders.py:60
+msgid "Failed, gender was not created!"
+msgstr ""
+
+#: .\members\views\genders.py:41
+msgid "Create new gender"
+msgstr ""
+
+#: .\members\views\genders.py:43 .\members\views\licenses.py:43
+#: .\members\views\members.py:63 .\members\views\modules.py:43
+#: .\members\views\positions.py:43 .\members\views\tariffs.py:43
+msgid "Create"
+msgstr ""
+
+#: .\members\views\genders.py:56
+msgid "Gender was created!"
+msgstr ""
+
+#: .\members\views\genders.py:66
+msgid "Update gender"
+msgstr ""
+
+#: .\members\views\genders.py:68 .\members\views\licenses.py:68
+#: .\members\views\members.py:87 .\members\views\modules.py:68
+#: .\members\views\positions.py:68 .\members\views\tariffs.py:68
+msgid "Update"
+msgstr ""
+
+#: .\members\views\genders.py:80
+msgid "Gender was deleted!"
+msgstr ""
+
+#: .\members\views\genders.py:84
+msgid "Failed, gender was not deleted!"
+msgstr ""
+
+#: .\members\views\genders.py:87
+msgid "Delete gender"
+msgstr ""
+
+#: .\members\views\licenses.py:18
+msgid "All licenses"
+msgstr ""
+
+#: .\members\views\licenses.py:31
+msgid "New license was created!"
+msgstr ""
+
+#: .\members\views\licenses.py:35
+msgid "Failed, license was not created!"
+msgstr ""
+
+#: .\members\views\licenses.py:41
+msgid "Create new license"
+msgstr ""
+
+#: .\members\views\licenses.py:56
+msgid "License was updated!"
+msgstr ""
+
+#: .\members\views\licenses.py:60
+msgid "Failed, license was not updated!"
+msgstr ""
+
+#: .\members\views\licenses.py:66
+msgid "Update license"
+msgstr ""
+
+#: .\members\views\licenses.py:80
+msgid "License was deleted!"
+msgstr ""
+
+#: .\members\views\licenses.py:84
+msgid "Failed, license was not deleted!"
+msgstr ""
+
+#: .\members\views\licenses.py:87
+msgid "Delete license"
+msgstr ""
+
+#: .\members\views\members.py:33
+msgid "All members"
+msgstr ""
+
+#: .\members\views\members.py:51
+msgid "New member was created!"
+msgstr ""
+
+#: .\members\views\members.py:55 .\members\views\members.py:79
+msgid "Failed, member was not created!"
+msgstr ""
+
+#: .\members\views\members.py:61
+msgid "Create new Member"
+msgstr ""
+
+#: .\members\views\members.py:75
+msgid "Member was updated!"
+msgstr ""
+
+#: .\members\views\members.py:85
+msgid "Update member"
+msgstr ""
+
+#: .\members\views\members.py:96
+msgid "Detail member"
+msgstr ""
+
+#: .\members\views\modules.py:18
+msgid "All modules"
+msgstr ""
+
+#: .\members\views\modules.py:31
+msgid "New module was created!"
+msgstr ""
+
+#: .\members\views\modules.py:35
+msgid "Failed, module was not created!"
+msgstr ""
+
+#: .\members\views\modules.py:41
+msgid "Create new module"
+msgstr ""
+
+#: .\members\views\modules.py:56
+msgid "Module was updated!"
+msgstr ""
+
+#: .\members\views\modules.py:60
+msgid "Failed, module was not updated!"
+msgstr ""
+
+#: .\members\views\modules.py:66
+msgid "Update module"
+msgstr ""
+
+#: .\members\views\modules.py:80
+msgid "Module was deleted!"
+msgstr ""
+
+#: .\members\views\modules.py:84
+msgid "Failed, module was not deleted!"
+msgstr ""
+
+#: .\members\views\modules.py:86
+msgid "Delete module"
+msgstr ""
+
+#: .\members\views\positions.py:18
+msgid "All positions"
+msgstr ""
+
+#: .\members\views\positions.py:31
+msgid "New position was created!"
+msgstr ""
+
+#: .\members\views\positions.py:35
+msgid "Failed, position was not created!"
+msgstr ""
+
+#: .\members\views\positions.py:41
+msgid "Create new position"
+msgstr ""
+
+#: .\members\views\positions.py:56
+msgid "Position was updated!"
+msgstr ""
+
+#: .\members\views\positions.py:60
+msgid "Failed, position was not updated!"
+msgstr ""
+
+#: .\members\views\positions.py:66
+msgid "Update position"
+msgstr ""
+
+#: .\members\views\positions.py:80
+msgid "Position was deleted!"
+msgstr ""
+
+#: .\members\views\positions.py:84
+msgid "Failed, position was not deleted!"
+msgstr ""
+
+#: .\members\views\positions.py:86
+msgid "Delete position"
+msgstr ""
+
+#: .\members\views\tariffs.py:18
+msgid "All tariffs"
+msgstr ""
+
+#: .\members\views\tariffs.py:31
+msgid "New tariff was created!"
+msgstr ""
+
+#: .\members\views\tariffs.py:35
+msgid "Failed, tariff was not created!"
+msgstr ""
+
+#: .\members\views\tariffs.py:41
+msgid "Create new tariff"
+msgstr ""
+
+#: .\members\views\tariffs.py:56
+msgid "Tariff was upadated!"
+msgstr ""
+
+#: .\members\views\tariffs.py:60
+msgid "Failed, tariff was not updated!"
+msgstr ""
+
+#: .\members\views\tariffs.py:66
+msgid "Update tariff"
+msgstr ""
+
+#: .\members\views\tariffs.py:80
+msgid "Tariff was deleted!"
+msgstr ""
+
+#: .\members\views\tariffs.py:84
+msgid "Failed, tariff was not deleted!"
+msgstr ""
+
+#: .\members\views\tariffs.py:87
+msgid "Delete tariff"
 msgstr ""
