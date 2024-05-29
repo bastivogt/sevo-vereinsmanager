@@ -1,0 +1,19 @@
+{% load i18n %}
+<ul>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="order" data-filter-value="none">{% trans "None" %}</button>
+    </li>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="order" data-filter-value="created_at_asc">{% trans "Created at ascending" %}</button>
+    </li>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="order" data-filter-value="created_at_desc">{% trans "Created at descending" %}</button>
+    </li>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="order" data-filter-value="updated_at_asc">{% trans "Updated at ascending" %}</button>
+    </li>
+    <li>
+        <button class="btn btn-link p-0 text-start" data-filter-key="order" data-filter-value="updated_at_desc">{% trans "Updated at descending" %}</button>
+    </li>
+
+</ul>

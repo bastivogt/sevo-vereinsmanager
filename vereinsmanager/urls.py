@@ -20,7 +20,9 @@ from members.views import members
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
     path("", members.redirect, name="index"),
     path("sevo-auth/", include("sevo_auth.urls")),
     path("mbrs/", include("members.urls")),
+    path("tds/", include("todos.urls")),
 ]

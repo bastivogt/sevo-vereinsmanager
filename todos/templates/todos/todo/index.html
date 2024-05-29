@@ -12,28 +12,27 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>{{ title }}</h1>
-                <a class="btn btn-primary btn-lg" href="{% url "members-member-create" %}"><i class="demo-icon icon-plus"></i></a>
+                <a class="btn btn-primary btn-lg" href="{% url "todos-todo-create" %}"><i class="demo-icon icon-plus"></i></a>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block main %}
-    {% if members %}
+    {% if todos %}
         <div>
-            {% include "members/member/partials/_list_table.html" %}
+            {% include "todos/todo/partials/_list_table.html" %}
         </div>
     {% else %}
-        <p>{% trans "No members available." %}</p>
+        <p>{% trans "No todos available." %}</p>
     {% endif %}
 {%  endblock %}
 
 {% block side %}
     <div id="filter-section">
-
-        {% include "members/member/partials/_frontend_filter_accordion.html" %}
+        {% include "todos/todo/partials/_frontend_filter_accordion.html" %}
         <div class="mb-3">
-            <a class="btn btn-primary w-100" href="{% url "members-member-index" %}"><i class="demo-icon icon-cw"></i>{% trans "Reset filters" %}</a>
+            <a class="btn btn-primary w-100" href="{% url "todos-todo-index" %}"><i class="demo-icon icon-cw"></i>{% trans "Reset filters" %}</a>
         </div>
     </div>
 
@@ -43,5 +42,5 @@
 
 
 {% block js %}
-    <script src="{% static "members/js/filter.js" %}"></script>
+    <script src="{% static "todos/js/filter.js" %}"></script>
 {% endblock %}

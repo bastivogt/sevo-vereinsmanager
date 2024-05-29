@@ -1,0 +1,46 @@
+{% extends "base_main.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ todo.title }}
+{% endblock %}
+
+
+{% block main %}
+    <div class="card">
+        <div class="card-header">
+            <h3>{{ todo.title }}
+                <span class="badge rounded-pill {% if todo.done %}text-bg-success{% else %}text-bg-warning{% endif %}">
+                    {% if todo.done %}
+                        <i class="demo-icon icon-thumbs-up"></i>
+                    {% else %}
+                        <i class="demo-icon icon-thumbs-down"></i>
+                    {% endif %}
+                </span>
+            </h3>
+            <div>
+                <strong>{% trans "Created at" %}:</strong> {{ todo.created_at|date:"d.m.Y, H:i" }}
+            </div>
+            <div>
+                <strong>{% trans "Updated at" %}:</strong> {{ todo.updated_at|date:"d.m.Y, H:i" }}
+            </div>
+            <div>
+                <strong>{% trans "Categories" %}:</strong>
+                {{ todo.get_categories_str}}
+            </div>
+        </div>
+        <div class="card-body">
+            <p>
+                {% autoescape off %}
+                    {{ todo.content }}
+                {% endautoescape %}
+            </p>
+        </div>
+        <div class="card-footer">
+            <div class="d-flex justify-content-start align-content-center">
+                <button type="button" class="btn btn-primary back-link m-1"><i class="demo-icon icon-left"></i></button>
+            </div>
+        </div>
+    </div>
+
+{%  endblock %}

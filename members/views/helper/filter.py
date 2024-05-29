@@ -66,12 +66,12 @@ def filter(request, queryset):
     # order
     if order_get != None and order_get != "none":
         if order_get == "birthday_asc":
-            qs = qs.order_by("-birthday")
-        elif order_get == "birthday_desc":
             qs = qs.order_by("birthday")
+        elif order_get == "birthday_desc":
+            qs = qs.order_by("-birthday")
         elif order_get == "entry_date_asc":
-            qs.order_by("-entry_date")
+            qs.order_by("entry_date")
         elif order_get == "entry_date_desc":
-            qs = qs.order_by("entry_date")
+            qs = qs.order_by("-entry_date")
     
     return qs

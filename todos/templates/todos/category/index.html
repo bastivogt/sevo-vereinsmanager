@@ -1,0 +1,32 @@
+{% extends "base_main.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+{% block header %}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>{{ title }}</h1>
+                <a class="btn btn-primary btn-lg" href="{% url "todos-category-create" %}"><i class="demo-icon icon-plus"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div>
+        {% if categories %}
+            <div>
+                {% include "todos/category/partials/_list_table.html" %}
+            </div>
+            {% else %}
+            <p>{% trans "No categories available." %}</p>
+        {% endif %}
+    </div>
+{%  endblock %}
+

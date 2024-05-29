@@ -1,0 +1,42 @@
+{% extends "base_main.html" %}
+{% load i18n %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+
+
+{% block main %}
+    <div class="card border-danger">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="card-header border-danger text-bg-danger">
+                <h2>{{ title }}</h2>
+            </div>
+            <div class="card-body text-danger">
+                <p>
+                    {% trans "Do you really want to delete this item?" %}
+                </p>
+                <div>
+                    <strong>{% trans "Title" %}</strong>: 
+                    {{ category.title }}
+                </div>
+                <div>
+                    <strong>{% trans "Created at" %}</strong>: 
+                    {{ category.created_at|date:"d.m.Y, H:i" }}
+                </div>
+                <div>
+                    <strong>{% trans "Updated at" %}</strong>: 
+                    {{ category.updated_at|date:"d.m.Y, H:i" }}
+                </div>
+            </div>
+            <div class="card-footer border-danger bg-white">
+                <div class="d-flex justify-content-start align-content-center">
+                    <button type="submit" class="btn btn-danger m-1"><i class="demo-icon icon-trash"></i></button>
+                    <button type="button" class="btn btn-primary back-link m-1"><i class="demo-icon icon-left"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+{%  endblock %}
