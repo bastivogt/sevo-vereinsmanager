@@ -6,8 +6,6 @@ def filter(request, queryset):
 
     qs = queryset
 
-    print(f"category: {category_get}")
-
     # categories
     if category_get != None and category_get != "all":
         qs = qs.filter(categories__id=int(category_get))
