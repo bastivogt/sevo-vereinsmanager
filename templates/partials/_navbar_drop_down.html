@@ -13,7 +13,7 @@
                     <a class="nav-link dropdown-toggle {% if "mbrs" in request.path %} active{% endif %}"{% if "mbrs" in request.path %} aria-current="page"{% endif %} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       {% trans "Members" %}
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-dark">
                         <li>
                             <a class="dropdown-item{% if "member" in request.path %} active{% endif %}" href="{% url "members-member-index" %}">{% trans "Members" %}</a>
                         </li>
