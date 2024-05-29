@@ -82,7 +82,7 @@ def update(request, id):
         form = forms.MemberForm(instance=member)
 
     return render(request, "members/member/create_update.html",  {
-        "title": _("Update member"),
+        "title": _("Update member") + f" #{member.id}",
         "form": form,
         "submit_label": _("Update")
     })
@@ -93,8 +93,25 @@ def update(request, id):
 def detail(request, id):
     member = get_object_or_404(models.Member, id=id)
     return render(request, "members/member/detail.html", {
-        "title": _("Detail member"), 
+        "title": _("Detail member") + f" #{member.id}", 
         "member": member
     })
 
 
+# delete
+@login_required(login_url="sevo-auth-login")
+def delete(request, id):
+    member = get_object_or_404(models.Member, id=id)
+
+    if request.method == "POST":
+        member.delete()
+        messages.add_message(request, messages.SUCCESS, _("Member was deleted!"))
+        url = reverse("members-member-index")
+        return HttpResponseRedirect(url)
+    else:
+        messages.add_message(request, messages.SUCCESS, _("Failed, member was not deleted!"))
+
+    return render(request, "members/member/delete.html", {
+        "title": _("Delete todo") + f" #{member.id}",
+        "member": member
+    })

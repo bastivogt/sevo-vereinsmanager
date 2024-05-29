@@ -26,7 +26,8 @@ def index(request):
     for member in members:
         age_sum += member.get_age()
 
-    average_age = age_sum / members.count()
+    if members.count() != 0:
+        average_age = age_sum / members.count()
 
 
     items = [

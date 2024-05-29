@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.GenderForm(instance=gender)
 
     return render(request, "members/gender/create_update.html",  {
-        "title": _("Update gender"),
+        "title": _("Update gender") + f" #{gender.id}",
         "form": form,
         "submit_label": _("Update")
     })
@@ -84,7 +84,7 @@ def delete(request, id):
         messages.add_message(request, messages.SUCCESS, _("Failed, gender was not deleted!"))
 
     return render(request, "members/gender/delete.html", {
-        "title": _("Delete gender"),
+        "title": _("Delete gender") + f" #{gender.id}",
         "gender": gender
     })
 

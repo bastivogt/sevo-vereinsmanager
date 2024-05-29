@@ -20,7 +20,7 @@ def index(request):
     categories = models.Category.objects.all()
 
     todos = filter.filter(request, todos)
-    
+
     return render(request, "todos/todo/index.html", {
         "title": "All todos",
         "todos": todos,
@@ -70,7 +70,7 @@ def update(request, id):
     else:
         form = forms.TodoForm(instance=todo)
     return render(request, "todos/todo/create_update.html", {
-        "title": _("Update todo"),
+        "title": _("Update todo") + f" #{todo.id}",
         "form": form,
         "submit_label": _("Update")
     })
@@ -91,7 +91,7 @@ def delete(request, id):
         messages.add_message(request, messages.SUCCESS, _("Failed, todo was not deleted!"))
 
     return render(request, "todos/todo/delete.html", {
-        "title": _("Delete todo"),
+        "title": _("Delete todo") + f" #{todo.id}",
         "todo": todo
     })
 
@@ -101,7 +101,7 @@ def delete(request, id):
 def detail(request, id):
     todo = get_object_or_404(models.Todo, id=id)
     return render(request, "todos/todo/detail.html", {
-        "title": _("Todo detail"),
+        "title": _("Todo detail") + f" #{todo.id}",
         "todo": todo
     })
 

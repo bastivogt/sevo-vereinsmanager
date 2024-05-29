@@ -59,7 +59,7 @@ def update(request, id):
     else:
         form = forms.CategoryForm(instance=category)
     return render(request, "todos/category/create_update.html", {
-        "title": _("Update category"),
+        "title": _("Update category") + f" #{category.id}",
         "form": form,
         "submit_label": _("Update")
     })
@@ -80,6 +80,6 @@ def delete(request, id):
         messages.add_message(request, messages.SUCCESS, _("Failed, category was not deleted!"))
 
     return render(request, "todos/category/delete.html", {
-        "title": _("Delete category"),
+        "title": _("Delete category") + f" #{category.id}",
         "category": category
     })

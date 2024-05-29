@@ -16,6 +16,7 @@ urlpatterns = [
     path("member/create", members.create, name="members-member-create"),
     path("member/update/<int:id>", members.update, name="members-member-update"),
     path("member/detail/<int:id>", members.detail, name="members-member-detail"),
+    path("member/delete/<int:id>", members.delete, name="members-member-delete"),
 
 
     # gender

@@ -63,7 +63,7 @@ def update(request, id):
         form = forms.LicenseForm(instance=license)
 
     return render(request, "members/license/create_update.html",  {
-        "title": _("Update license"),
+        "title": _("Update license") + f" #{license.id}",
         "form": form,
         "submit_label": _("Update")
     })
@@ -84,7 +84,7 @@ def delete(request, id):
         messages.add_message(request, messages.SUCCESS, _("Failed, license was not deleted!"))
 
     return render(request, "members/license/delete.html", {
-        "title": _("Delete license"),
+        "title": _("Delete license") + f" #{license.id}",
         "license": license
     })
 
