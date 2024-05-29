@@ -1,0 +1,21 @@
+{% load i18n %}
+<div class="table-responsive">
+    <table class="table table-bordered align-middle">
+        <thead class="table-light">
+        <tr>
+            <th scope="col">{% trans "Title" %}</th>
+            <th scope="col">{% trans "Value" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <th scope="row" class="w-50">
+                        {{ item.title }}
+                    </th>
+                    <td class="w-auto">{{ item.value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

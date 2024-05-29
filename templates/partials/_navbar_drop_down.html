@@ -15,6 +15,9 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
                         <li>
+                            <a class="dropdown-item{% if "dashboard" in request.path %} active{% endif %}" href="{% url "members-dashboard-index" %}">{% trans "Dashboard" %}</a>
+                        </li>
+                        <li>
                             <a class="dropdown-item{% if "member" in request.path %} active{% endif %}" href="{% url "members-member-index" %}">{% trans "Members" %}</a>
                         </li>
                         <li>

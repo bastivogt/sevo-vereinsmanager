@@ -6,8 +6,11 @@ from members.views import positions
 from members.views import modules
 from members.views import licenses
 from members.views import tariffs
+from members.views import dashboard
 
 urlpatterns = [
+    # dashboard
+    path("dashboard/", dashboard.index, name="members-dashboard-index"),
     # member
     path("members/", members.index, name="members-member-index"),
     path("member/create", members.create, name="members-member-create"),

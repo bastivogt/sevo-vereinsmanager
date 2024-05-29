@@ -68,11 +68,11 @@
         <div class="card-body">
             <div>
                 <strong>{% trans "Email" %}: </strong>
-                {{ member.email }}
+                <a href="mailto:{{ member.email }}">{{ member.email }}</a>
             </div>
             <div>
                 <strong>{% trans "Phone" %}: </strong>
-                {{ member.phone }}
+                <a href="tel:{{ member.phone }}">{{ member.phone }}</a>
             </div>
         </div>
     </div>
