@@ -73,5 +73,13 @@ def filter(request, queryset):
             qs.order_by("entry_date")
         elif order_get == "entry_date_desc":
             qs = qs.order_by("-entry_date")
+        elif order_get == "firstname_asc":
+            qs = qs.order_by("firstname")
+        elif order_get == "firstname_desc":
+            qs = qs.order_by("-firstname")
+        elif order_get == "lastname_asc":
+            qs = qs.order_by("lastname")
+        elif order_get == "lastname_desc":
+            qs = qs.order_by("-lastname")
     
     return qs

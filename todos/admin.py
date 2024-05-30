@@ -19,6 +19,13 @@ class TodoAdmin(admin.ModelAdmin):
 
     ]
 
+    list_filter = [
+        "created_at",
+        "updated_at",
+        "categories",
+        "done"
+    ]
+
 
 admin.site.register(models.Todo, TodoAdmin)
 admin.site.register(models.Category, CategoryAdmin)
