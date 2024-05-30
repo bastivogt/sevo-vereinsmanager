@@ -28,7 +28,7 @@ class Todo(models.Model):
     content = tinymce_models.HTMLField()
     categories = models.ManyToManyField(Category, blank=True)
     done = models.BooleanField(default=False)
-    user_doned = models.IntegerField(null=True, blank=True)
+    user_doned = models.CharField(max_length=255, null=True, blank=True)
 
 
 
@@ -60,13 +60,16 @@ class Todo(models.Model):
         print(user)
         if user == None:
             return super().save(*args, **kwargs)
-        check_todo = Todo.objects.get(id=self.id)
+        try:
+            check_todo = Todo.objects.get(id=self.id)
+        except:
+            return super().save(*args, **kwargs)
         if not check_todo.done:
-            self.user_doned = user.id
-            super().save(*args, **kwargs)
+            self.user_doned = user.username
+            return super().save(*args, **kwargs)
         else:
             self.user_doned = None
-            super().save(*args, **kwargs)
+            return super().save(*args, **kwargs)
 
 
 

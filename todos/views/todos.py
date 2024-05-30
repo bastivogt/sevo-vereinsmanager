@@ -34,9 +34,9 @@ def create(request):
     user = request.user
     todo = models.Todo(user=user)
     if request.method == "POST":
-        form = forms.TodoForm(request.POST, instance=todo)
+        form = forms.TodoFormCreate(request.POST, instance=todo)
         if form.is_valid():
-            form.save()
+            form.save(request.user)
             messages.add_message(request, messages.SUCCESS, _("Todo was created!"))
             url = reverse("todos-todo-index")
             return HttpResponseRedirect(url)
@@ -44,7 +44,7 @@ def create(request):
             messages.add_message(request, messages.ERROR, _("Failed, todo was not created!"))
 
     else:
-        form = forms.TodoForm(instance=todo)
+        form = forms.TodoFormCreate(instance=todo)
     return render(request, "todos/todo/create_update.html", {
         "title": _("Create todo"),
         "form": form,

@@ -14,6 +14,7 @@ class TodoAdmin(admin.ModelAdmin):
     list_display = [
         "title",
         "user", 
+        "user_doned",
         "created_at",
         "updated_at"
 

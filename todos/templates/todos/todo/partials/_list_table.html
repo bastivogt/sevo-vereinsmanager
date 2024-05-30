@@ -7,6 +7,7 @@
             <th scope="col">{% trans "Categories" %}</th>
             <th scope="col">{% trans "Created at" %}</th>
             <th scope="col">{% trans "Updated at" %}</th>
+            <th scope="col">{% trans "Doned by" %}</th>
             <th scope="col">{% trans "Done" %}</th>
             <th scope="col">{% trans "Actions" %}</th>
         </tr>
@@ -21,6 +22,14 @@
 
                     <td class="w-auto"><time><small><i>{{ todo.created_at|date:"d.m.Y, H:i" }}</i></small></time></td>
                     <td class="w-auto"><time><small><i>{{ todo.updated_at|date:"d.m.Y, H:i" }}</i></small></time></td>
+                    <td class="w-auto">
+                        {% if todo.user_doned %}
+                        {{ todo.user_doned }}
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+
                     <td class="w-auto">
                         <a class="btn btn-lg btn-{% if todo.done %}success{% else %}warning{% endif %} btn-sm d-block m-1" href="{% url "todos-todo-done" id=todo.id %}">
                             {% if todo.done %}
