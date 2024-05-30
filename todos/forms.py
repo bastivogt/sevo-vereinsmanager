@@ -20,6 +20,12 @@ class CategoryForm(forms.ModelForm):
 
 # TodoForm
 class TodoForm(forms.ModelForm):
+
+    def save(self, user=None, *args, **kwargs):
+        if user == None:
+            return super().save(*args, **kwargs)
+        return self.instance.save(user)
+
     class Meta:
         model = models.Todo
         fields = "__all__"
@@ -40,3 +46,5 @@ class TodoForm(forms.ModelForm):
             "categories": forms.SelectMultiple(attrs={"class": "form-select multiple"}),
             "done": forms.CheckboxInput(attrs={"class": "form-check-input"})
         }
+
+

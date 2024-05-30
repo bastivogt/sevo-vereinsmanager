@@ -1,3 +1,4 @@
+from typing import Iterable
 from django.db import models
 from tinymce import models as tinymce_models
 from django.contrib.auth import get_user_model
@@ -27,6 +28,8 @@ class Todo(models.Model):
     content = tinymce_models.HTMLField()
     categories = models.ManyToManyField(Category, blank=True)
     done = models.BooleanField(default=False)
+    user_doned = models.IntegerField(null=True, blank=True)
+
 
 
     created_at = models.DateTimeField(auto_now=True)
@@ -37,6 +40,34 @@ class Todo(models.Model):
         categories = self.categories.all()
         categories_list = [category.title for category in categories]
         return ", ".join(categories_list)
+
+    # def save(self, user=None, *args, **kwargs):
+    #     print("save_doned()")
+    #     print(user)
+    #     if user == None:
+    #         return super().save(*args, **kwargs)
+        
+    #     check_todo = Todo.objects.get(id=self.id)
+    #     if not check_todo.done:
+    #         self.user_doned = user.id
+    #         super().save(*args, **kwargs)
+    #     else:
+    #         self.user_doned = None
+    #         super().save(*args, **kwargs)
+
+    def save(self, user=None, *args, **kwargs):
+        print("save_doned()")
+        print(user)
+        if user == None:
+            return super().save(*args, **kwargs)
+        check_todo = Todo.objects.get(id=self.id)
+        if not check_todo.done:
+            self.user_doned = user.id
+            super().save(*args, **kwargs)
+        else:
+            self.user_doned = None
+            super().save(*args, **kwargs)
+
 
 
     def __str__(self):
