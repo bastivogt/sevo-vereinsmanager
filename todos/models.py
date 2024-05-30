@@ -4,6 +4,8 @@ from tinymce import models as tinymce_models
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
+
+from . import exceptions
 # Create your models here.
 
 
@@ -74,7 +76,8 @@ class Todo(models.Model):
         else:
             self.done = check_todo.done
             ret = super().save(*args, **kwargs)
-            raise Exception("Logged in user is not the same user who done_by the todo")
+            #raise Exception("Logged in user is not the same user who done_by the todo")
+            raise exceptions.InvalidUserExcpetion()
             return ret
 
 

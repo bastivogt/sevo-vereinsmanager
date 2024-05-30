@@ -13,6 +13,7 @@ User = get_user_model()
 from todos import models
 from todos import forms
 from todos.views.helper import filter
+from todos import exceptions
 
 @login_required(login_url="sevo-auth-login")
 def index(request):
@@ -62,7 +63,7 @@ def update(request, id):
         if form.is_valid():
             try:
                 form.save(request.user)
-            except Exception as e:
+            except exceptions.InvalidUserExcpetion as e:
                 pass
                 # messages.add_message(request, messages.ERROR, e)
 
@@ -118,8 +119,8 @@ def done(request, id):
     todo.done = not todo.done
     try:
         todo.save(request.user)
-    except Exception as e:
-        messages.add_message(request, messages.ERROR, _(str(e)))
+    except exceptions.InvalidUserExcpetion as e:
+        messages.add_message(request, messages.ERROR, _(str(e.message)))
         url = reverse("todos-todo-index")
         return HttpResponseRedirect(url)
 
