@@ -60,8 +60,13 @@ def update(request, id):
     if request.method == "POST":
         form = forms.TodoForm(request.POST, instance=todo)
         if form.is_valid():
-            form.save(request.user)
-            #form.save_doned(request.user)
+            try:
+                form.save(request.user)
+            except Exception as e:
+                pass
+                # messages.add_message(request, messages.ERROR, e)
+
+ 
             messages.add_message(request, messages.SUCCESS, _("Todo was updated!"))
             url = reverse("todos-todo-index")
             return HttpResponseRedirect(url)
@@ -111,7 +116,12 @@ def detail(request, id):
 def done(request, id):
     todo = get_object_or_404(models.Todo, id=id)
     todo.done = not todo.done
-    todo.save(request.user)
+    try:
+        todo.save(request.user)
+    except Exception as e:
+        messages.add_message(request, messages.ERROR, _(str(e)))
+        url = reverse("todos-todo-index")
+        return HttpResponseRedirect(url)
 
 
     msg_done = _("done")

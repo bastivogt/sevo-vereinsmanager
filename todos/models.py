@@ -28,7 +28,7 @@ class Todo(models.Model):
     content = tinymce_models.HTMLField()
     categories = models.ManyToManyField(Category, blank=True)
     done = models.BooleanField(default=False)
-    user_doned = models.CharField(max_length=255, null=True, blank=True)
+    done_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, related_name="doneuser")
 
 
 
@@ -64,12 +64,18 @@ class Todo(models.Model):
             check_todo = Todo.objects.get(id=self.id)
         except:
             return super().save(*args, **kwargs)
-        if not check_todo.done:
-            self.user_doned = user.username
-            return super().save(*args, **kwargs)
+        if check_todo.done_by == user or check_todo.done == False:
+            if not check_todo.done:
+                self.done_by = user
+                return super().save(*args, **kwargs)
+            else:
+                self.done_by = None
+                return super().save(*args, **kwargs)
         else:
-            self.user_doned = None
-            return super().save(*args, **kwargs)
+            self.done = check_todo.done
+            ret = super().save(*args, **kwargs)
+            raise Exception("Logged in user is not the same user who done_by the todo")
+            return ret
 
 
 

@@ -91,8 +91,8 @@ class Member(models.Model):
 
     legal_representative = models.TextField(blank=True)
 
-    bankname = models.CharField(max_length=255)
-    iban = models.CharField(max_length=50)
+    bankname = models.CharField(max_length=255, blank=True)
+    iban = models.CharField(max_length=50, blank=True)
     bic = models.CharField(max_length=50, blank=True)
 
     positions = models.ManyToManyField(Position, blank=True)

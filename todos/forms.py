@@ -31,7 +31,8 @@ class TodoForm(forms.ModelForm):
         fields = "__all__"
         exclude = [
             "user",
-            "user_doned"
+            "done_by"
+
         ]
 
         labels = {
@@ -56,7 +57,7 @@ class TodoFormCreate(TodoForm):
         exclude = [
             "user",
             "done",
-            "user_doned"
+            "done_by"
         ]
 
         labels = {
