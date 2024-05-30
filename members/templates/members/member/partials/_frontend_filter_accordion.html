@@ -2,15 +2,28 @@
 <div class="accordion mb-3" id="filterAccordion">
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#modules" aria-expanded="true" aria-controls="modules">
-          {% trans "Modules" %}
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#search" aria-expanded="true" aria-controls="search">
+          {% trans "Search" %}
         </button>
       </h2>
-      <div id="modules" class="accordion-collapse collapse show" data-bs-parent="#filterAccordion">
+      <div id="search" class="accordion-collapse collapse show" data-bs-parent="#filterAccordion">
         <div class="accordion-body">
-            {% include "members/member/partials/_filter_modules.html" %}
+            {% include "members/member/partials/_search.html" %}
         </div>
       </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#modules" aria-expanded="false" aria-controls="modules">
+            {% trans "Modules" %}
+            </button>
+        </h2>
+        <div id="modules" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+            <div class="accordion-body">
+                {% include "members/member/partials/_filter_modules.html" %}
+            </div>
+        </div>
     </div>
 
     <div class="accordion-item">

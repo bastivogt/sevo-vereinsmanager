@@ -1,0 +1,19 @@
+{% load i18n %}
+
+
+<form action="" method="get">
+    {% for field in search_form %}
+        <div class="mb-3">
+            {{ field }}
+            {% if field.errors %}
+                <div class="alert alert-danger mt-1">
+                    {{ field.errors }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <div class="d-flex gap-1">
+        <button class="d-inline-block btn btn-primary">{% trans "Search" %}</button>
+        <a class="d-inline-block btn btn-primary" href="{% url "members-member-index" %}">{% trans "Reset" %}</a>
+    </div>
+</form>

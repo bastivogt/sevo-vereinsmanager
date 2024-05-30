@@ -30,7 +30,6 @@
 
 {% block side %}
     <div id="filter-section">
-
         {% include "members/member/partials/_frontend_filter_accordion.html" %}
         <div class="mb-3">
             <a class="btn btn-primary w-100" href="{% url "members-member-index" %}"><i class="demo-icon icon-cw"></i>{% trans "Reset filters" %}</a>
@@ -43,5 +42,6 @@
 
 
 {% block js %}
+
     <script src="{% static "members/js/filter.js" %}"></script>
 {% endblock %}

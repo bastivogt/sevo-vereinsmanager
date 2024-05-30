@@ -7,7 +7,7 @@ from django.contrib import messages
 
 from members import models
 from members import forms
-from members.views.helper import filter
+from members.views.helper import filter, search
 
 
 
@@ -19,15 +19,30 @@ def redirect(request):
 
 @login_required(login_url="sevo-auth-login")
 def index(request):
+    search_get = request.GET.get("search")
     members = models.Member.objects.all()
+
+    if search_get != None:
+        search_form = forms.SearchForm(initial={
+            "search": search_get
+        })
+    else:
+        search_form = forms.SearchForm()
+
+    
+
 
     positions = models.Position.objects.all()
     modules = models.Module.objects.all()
     tariffs = models.Tariff.objects.all()
     licenses = models.License.objects.all()
     genders = models.Gender.objects.all()
+    
+
+    members = search.search(request, members)
 
     members = filter.filter(request, members)
+
 
     return render(request, "members/member/index.html", {
         "title": _("All members"),
@@ -36,7 +51,8 @@ def index(request):
         "modules": modules,
         "tariffs": tariffs,
         "licenses": licenses,
-        "genders": genders
+        "genders": genders, 
+        "search_form": search_form
     })
 
 

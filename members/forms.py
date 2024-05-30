@@ -156,3 +156,12 @@ class MemberForm(forms.ModelForm):
             "publish_fotos": forms.CheckboxInput(attrs={"class": "form-check-input"}),
             "is_active": forms.CheckboxInput(attrs={"class": "form-check-input"}),
         }
+
+
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=255)
+    def __init__(self, *args, **kwargs):
+        # self.fields["firstname"].widget.attrs["class"] = "form-control"
+        super().__init__(*args, **kwargs)
+        self.fields["search"].widget.attrs["class"] = "form-control"
