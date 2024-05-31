@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from members.views import members
+from seeds import views as seed_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,5 @@ urlpatterns = [
     path("sevo-auth/", include("sevo_auth.urls")),
     path("mbrs/", include("members.urls")),
     path("tds/", include("todos.urls")),
+    path("seeds/", include("seeds.urls"))
 ]
