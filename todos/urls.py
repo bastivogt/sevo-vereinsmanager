@@ -11,6 +11,7 @@ urlpatterns = [
     path("todo/delete/<int:id>", todos.delete, name="todos-todo-delete"),
     path("todo/detail/<int:id>", todos.detail, name="todos-todo-detail"),
     path("todo/done/<int:id>", todos.done, name="todos-todo-done"),
+    path("todo/done/detail/<int:id>", todos.done_from_detail, name="todos-todo-done-detail"),
 
     # category
     path("categories/", categories.index, name="todos-category-index"),

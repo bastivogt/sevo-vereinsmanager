@@ -14,6 +14,7 @@ from todos import models
 from todos import forms
 from todos.views.helper import filter
 from todos import exceptions
+from todos.views.helper import todo_helper
 
 @login_required(login_url="sevo-auth-login")
 def index(request):
@@ -115,26 +116,11 @@ def detail(request, id):
 # done
 @login_required(login_url="sevo-auth-login")
 def done(request, id):
-    todo = get_object_or_404(models.Todo, id=id)
-    todo.done = not todo.done
-    try:
-        todo.save(request.user)
-    except exceptions.InvalidUserExcpetion as e:
-        messages.add_message(request, messages.ERROR, _(str(e.message)))
-        url = reverse("todos-todo-index")
-        return HttpResponseRedirect(url)
+    return todo_helper.done(request=request, id=id, path_name="todos-todo-index")
 
 
-    msg_done = _("done")
-    msg_not_done = _("not done")
-    msg_done_full = f'{todo.title}: {msg_done}!'
-    msg_not_done_full = f'{todo.title}: {msg_not_done}!'
 
-
-    if todo.done:
-        messages.add_message(request, messages.SUCCESS, msg_done_full)
-    else:
-        messages.add_message(request, messages.WARNING, msg_not_done_full)
-
-    url = reverse("todos-todo-index")
-    return HttpResponseRedirect(url)
+# done_from_detail
+@login_required(login_url="sevo-auth-login")
+def done_from_detail(request, id):
+    return todo_helper.done(request=request, id=id, path_name="todos-todo-detail", path_id=id)
