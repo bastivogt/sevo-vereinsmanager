@@ -10,8 +10,8 @@ import math
 # Gender
 class Gender(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -23,8 +23,8 @@ class Gender(models.Model):
 # Position
 class Position(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -37,8 +37,8 @@ class Position(models.Model):
 class Tariff(models.Model):
     title = models.CharField(max_length=255, unique=True)
     amount = models.DecimalField(decimal_places=2, max_digits=5)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.title}: {self.amount}"
@@ -50,8 +50,8 @@ class Tariff(models.Model):
 # License
 class License(models.Model):
     title = models.CharField(max_length=100, unique=True)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -62,8 +62,8 @@ class License(models.Model):
 # Module
 class Module(models.Model):
     title = models.CharField(max_length=255, unique=True)
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.title}"
@@ -111,8 +111,8 @@ class Member(models.Model):
     canceled_at = models.DateField(blank=True, null=True)
     
 
-    created_at = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
 

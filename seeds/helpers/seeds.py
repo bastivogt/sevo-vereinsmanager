@@ -43,11 +43,12 @@ def do_seeds_members():
         city="Dessau-Roßlau",
         country="Deutschland",
 
-        email = "betont.online@googlemail.com",
+        email="betont.online@googlemail.com",
         phone="0176 30710872",
 
         publish_fotos=True,
-        is_active=True
+        is_active=True,
+        entry_date="2021-11-27"
     )
 
     member.positions.add(models.Position.objects.get(title="Vorstand"))
@@ -77,11 +78,13 @@ def do_seeds_members():
         city="Dessau-Roßlau",
         country="Deutschland",
 
-        email = "ute@meusel.de",
+        email="ute@meusel.de",
         phone="0176 30710872",
 
         publish_fotos=True,
-        is_active=True
+        is_active=True,
+
+        entry_date="2021-11-27"
     )
 
     member.positions.add(models.Position.objects.get(title="Vorstand"))
