@@ -19,6 +19,12 @@
                 </span>
             </h3>
             <div>
+                <strong>{% trans "Created by" %}:</strong> {{ todo.user}}
+            </div>
+            <div>
+                <strong>{% trans "Created by" %}:</strong> {% if todo.don_by %}{{ todo.done_by}}{% else %}-{% endif %}
+            </div>
+            <div>
                 <strong>{% trans "Created at" %}:</strong> {{ todo.created_at|date:"d.m.Y, H:i" }}
             </div>
             <div>

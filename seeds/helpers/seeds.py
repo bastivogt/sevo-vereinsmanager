@@ -1,7 +1,8 @@
 from members import models
+from todos import models as todo_models
 
 
-def do_seeds():
+def do_seeds_members():
     # create Genders
     models.Gender.objects.create(title="Mann")
     models.Gender.objects.create(title="Frau")
@@ -63,6 +64,38 @@ def do_seeds():
 
 
 
+
+    member = models.Member.objects.create(
+        firstname="Ute",
+        lastname="Meusel",
+        birthday="1980-07-27",
+        gender=models.Gender.objects.get(title="Frau"),
+
+        street="Schillerstraße",
+        house_number="33",
+        postal_code="06844",
+        city="Dessau-Roßlau",
+        country="Deutschland",
+
+        email = "ute@meusel.de",
+        phone="0176 30710872",
+
+        publish_fotos=True,
+        is_active=True
+    )
+
+    member.positions.add(models.Position.objects.get(title="Vorstand"))
+
+
+    member.modules.add(models.Module.objects.get(title="U.C.K."))
+
+    member.tariff = models.Tariff.objects.get(title="Zero")
+
+    member.save()
+
+
+
+# members_delte_all_entries
 def members_delete_all_entries():
     models.Gender.objects.all().delete()
     models.Module.objects.all().delete()
@@ -70,3 +103,37 @@ def members_delete_all_entries():
     models.License.objects.all().delete()
     models.Tariff.objects.all().delete()
     models.Member.objects.all().delete()
+
+
+
+def do_seeds_todos(request):
+    todo_models.Category.objects.create(title="Allgemein")
+    todo_models.Category.objects.create(title="Dachsanierung")
+    
+    todo = todo_models.Todo.objects.create(
+        user=request.user,
+        title="Herbstputz",
+        content="Wir dürfen diese Jahr den Herbstputz nicht vergessen ;)"
+    )
+
+    todo.categories.add(todo_models.Category.objects.get(title="Allgemein"))
+    todo.save()
+
+
+    todo = todo_models.Todo.objects.create(
+        user=request.user,
+        title="Unterlagen KFW Bank",
+        content="Restliche Unterlagen an die KFW Bank einreichen!"
+    )
+
+    todo.categories.add(todo_models.Category.objects.get(title="Dachsanierung"))
+    todo.save()
+
+
+# todos_delte_all_entries
+def todos_delete_all_entries():
+    todo_models.Category.objects.all().delete()
+    todo_models.Todo.objects.all().delete()
+
+
+
