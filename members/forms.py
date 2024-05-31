@@ -117,6 +117,7 @@ class MemberForm(forms.ModelForm):
 
             "publish_fotos": _("Publish fotos"),
             "is_active": _("Is active"),
+            "canceled_at": _("Canceled at"),
 
             "created_at": _("Created at"),
             "updated_at": _("Updated at")
@@ -155,6 +156,9 @@ class MemberForm(forms.ModelForm):
 
             "publish_fotos": forms.CheckboxInput(attrs={"class": "form-check-input"}),
             "is_active": forms.CheckboxInput(attrs={"class": "form-check-input"}),
+
+            "canceled_at": forms.DateInput(format=("%Y-%m-%d"), attrs={"class": "form-control", "placeholder": _("Choose a date"), "type":"date"}),
+
         }
 
 

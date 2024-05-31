@@ -108,6 +108,9 @@ class Member(models.Model):
     publish_fotos = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
+    canceled_at = models.DateField(blank=True, null=True)
+    
+
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 

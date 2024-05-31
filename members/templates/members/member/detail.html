@@ -184,6 +184,12 @@
                     {% trans "No" %}
                 {% endif %}
             </div>
+
+            <div>
+                <strong>{% trans "Canceled at" %}: </strong>
+                {{ member.canceled_at|date:"d.m.Y" }}
+            </div>
+
         </div>
     </div>
 
