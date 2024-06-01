@@ -144,9 +144,9 @@ class MemberForm(forms.ModelForm):
             "iban": forms.TextInput(attrs={"class": "form-control"}),
             "bic": forms.TextInput(attrs={"class": "form-control"}),
 
-            "positions": forms.SelectMultiple(attrs={"class": "form-select"}),
-            "modules": forms.SelectMultiple(attrs={"class": "form-select"}),
-            "licenses": forms.SelectMultiple(attrs={"class": "form-select"}),
+            "positions": forms.SelectMultiple(attrs={"class": "form-select", "size": "9"}),
+            "modules": forms.SelectMultiple(attrs={"class": "form-select", "size": "9"}),
+            "licenses": forms.SelectMultiple(attrs={"class": "form-select", "size": "9"}),
             "tariff": forms.Select(attrs={"class": "form-select"}),
             "entry_date": forms.DateInput(format=("%Y-%m-%d"), attrs={"class": "form-control", "placeholder": _("Choose a date"), "type":"date"}),
 

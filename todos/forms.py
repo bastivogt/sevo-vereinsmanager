@@ -45,7 +45,7 @@ class TodoForm(forms.ModelForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"}),
             "content": TinyMCE(attrs={"cols": 80, "rows": 30, "class": "form-control"}),
-            "categories": forms.SelectMultiple(attrs={"class": "form-select multiple"}),
+            "categories": forms.SelectMultiple(attrs={"class": "form-select multiple", "size": "9"}),
             "done": forms.CheckboxInput(attrs={"class": "form-check-input"})
         }
         
@@ -70,7 +70,7 @@ class TodoFormCreate(TodoForm):
         widgets = {
             "title": forms.TextInput(attrs={"class": "form-control"}),
             "content": TinyMCE(attrs={"cols": 80, "rows": 30, "class": "form-control"}),
-            "categories": forms.SelectMultiple(attrs={"class": "form-select multiple"}),
+            "categories": forms.SelectMultiple(attrs={"class": "form-select multiple", "size": "9"}),
             "done": forms.CheckboxInput(attrs={"class": "form-check-input"})
         }
 
