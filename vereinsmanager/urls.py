@@ -26,5 +26,6 @@ urlpatterns = [
     path("sevo-auth/", include("sevo_auth.urls")),
     path("mbrs/", include("members.urls")),
     path("tds/", include("todos.urls")),
+    path("csv-export/", include("csv_export.urls")),
     path("seeds/", include("seeds.urls"))
 ]

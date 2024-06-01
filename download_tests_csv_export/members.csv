@@ -1,0 +1,3 @@
+Firstname,Lastname,Birthday,Gender,Street,House number,Postal code,City,Country,Email,Phone,Legal representative,Bankname,IBAN,BIC,Positions,Modules,Licenses,Tariff,Tariff amount,Entry date,Chronic Diseases,Permanent medication,Publish photos,Is active,Canceled at
+Sebastian,Vogt,1981-02-27,Mann,Schillerstraße,33,06844,Dessau-Roßlau,Deutschland,betont.online@googlemail.com,0176 30710872,,,,,"Trainer, Vorstand","Kickboxen, U.C.K.",ÜL-C,Zero,0.00,2021-11-27,,,True,True,
+Ute,Meusel,1980-07-27,Frau,Schillerstraße,33,06844,Dessau-Roßlau,Deutschland,ute@meusel.de,0176 30710872,,,,,Vorstand,U.C.K.,,Zero,0.00,2021-11-27,,,True,True,

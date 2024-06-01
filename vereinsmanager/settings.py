@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "sevo_auth",
     "todos",
     "tinymce",
-    "seeds"
+    "seeds",
+    "csv_export"
 ]
 
 MIDDLEWARE = [

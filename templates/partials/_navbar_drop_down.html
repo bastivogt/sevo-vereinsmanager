@@ -35,6 +35,10 @@
                         <li>
                             <a class="dropdown-item{% if "tariff" in request.path %} active{% endif %}"{% if "tariff" in request.path %} aria-current="page"{% endif %} href="{% url "members-tariff-index" %}">{% trans "Tariffs" %}</a>
                         </li>
+                        <li><hr class="dropdown-divider bg-secondary"></li>
+                        <li>
+                            <a class="dropdown-item{% if "csv-export" in request.path %} active{% endif %}"{% if "csv-export" in request.path %} aria-current="page"{% endif %} href="{% url "csv-export-members" %}">{% trans "CSV Export" %}</a>
+                        </li>
                     </ul>
                   </li>
 
