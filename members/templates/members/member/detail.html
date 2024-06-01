@@ -141,27 +141,26 @@
         </div>
     </div>
 
-    {% if member.chronic_diseases or member.permanet_medication %}
-        <div class="card mb-3">
-            <div class="card-header">
-                <h2>{% trans "Diseases" %}</h2>
-            </div>
-            <div class="card-body">
-                {% if member.chronic_diseases %}
-                    <div>
-                        <strong>{% trans "Chronic diseases" %}: </strong>
-                        {{ member.chronic_diseases|linebreaks }}  
-                    </div>
-                {% endif %}
-                {% if member.permanent_medication %}
-                    <div>
-                        <strong>{% trans "Permanent medication" %}: </strong>
-                        {{ member.permanent_medication|linebreaks }}
-                    </div>
-                {% endif %}
-            </div>
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <h2>{% trans "Diseases" %}</h2>
         </div>
-    {% endif %}
+        <div class="card-body">
+
+            <div>
+                <strong>{% trans "Chronic diseases" %}: </strong>
+                {{ member.chronic_diseases|linebreaks }}  
+            </div>
+
+            <div>
+                <strong>{% trans "Permanent medication" %}: </strong>
+                {{ member.permanent_medication|linebreaks }}
+            </div>
+
+        </div>
+    </div>
+
 
     <div class="card mb-3">
         <div class="card-header">
