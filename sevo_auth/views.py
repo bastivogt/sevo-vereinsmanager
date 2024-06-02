@@ -17,6 +17,9 @@ from django.http import HttpResponseRedirect
 
 from django.contrib import messages
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 from . import forms
 from . import helpers
 from . import models
@@ -239,7 +242,10 @@ def forgot_password(request):
                 print(token)
                 token.save()
                 print(user)
+
                 # send token link per mail
+
+
                 success = True
                 
 
@@ -259,6 +265,14 @@ def forgot_password(request):
             print("###############################################")
             print(f"Resetlink per Mail: {link}")
             print("###############################################")
+
+            send_mail(
+                    _("SEVO Vereinsmanager - Reset your password"),
+                    f"Resetlink: {link}",
+                    settings.EMAIL_HOST_USER,
+                    [user.get_email_field_name()],
+                    fail_silently=False,
+                )
             url = reverse("sevo-auth-forgot-password")
             return HttpResponseRedirect(url)
         else:
@@ -318,6 +332,8 @@ def set_new_password_token(request, token):
         "title": _("Set new password"), 
         "form": form
     })
+
+
 
 
     

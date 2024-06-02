@@ -4,6 +4,10 @@ from django.http import HttpResponse
 from django.utils.translation import gettext as _
 from django.contrib.auth.decorators import login_required
 
+
+from django.core.mail import send_mail
+from django.conf import settings
+
 from members import models
 
 # Create your views here.
@@ -95,3 +99,20 @@ def export_members(request):
 
         ])
     return response
+
+
+
+
+def send_mail_view(request):
+    message = "Testmail"
+    email = "sportzentrumnord.dessau@gmail.com"
+    name = "SEVO"
+    send_mail(
+        name,
+        message,
+        settings.EMAIL_HOST_USER,
+        [email],
+        fail_silently=False
+
+    )
+    return HttpResponse("Send mail")
