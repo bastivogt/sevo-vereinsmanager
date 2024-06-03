@@ -270,7 +270,7 @@ def forgot_password(request):
                     _("SEVO Vereinsmanager Passwordreset"),
                     f"Resetlink: {link}",
                     #settings.EMAIL_HOST_USER,
-                    settings.DEFAULT_FROM_MAIL,
+                    settings.SEVO_AUTH_DEFAULT_FROM_MAIL,
                     [user.email],
                     fail_silently=False,
                 )
