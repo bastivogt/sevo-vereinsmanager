@@ -173,13 +173,13 @@ SEVO_AUTH_CAN_SIGN_UP = False
 # EMAIL
 if DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = False
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'betont.online@googlemail.com'
-EMAIL_HOST_PASSWORD = 'Basement1'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = False
+# EMAIL_PORT = 465
+# EMAIL_USE_SSL = True
+# EMAIL_HOST_USER = 'betont.online@googlemail.com'
+# EMAIL_HOST_PASSWORD = 'Basement1'
 
 # if DEBUG:
 #     EMAIL_HOST = 'localhost'
@@ -188,4 +188,21 @@ EMAIL_HOST_PASSWORD = 'Basement1'
 #     EMAIL_HOST_PASSWORD = ''
 #     EMAIL_USE_TLS = False
 #     DEFAULT_FROM_EMAIL = 'testing@example.com'
+
+
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.strato.de'
+EMAIL_USE_TLS = False
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'mail@sportzentrumnord.de'
+EMAIL_HOST_PASSWORD = 'Prototype7.'
+
+DEFAULT_FROM_MAIL = "vereismanager@sportzentrumnord.de"
 

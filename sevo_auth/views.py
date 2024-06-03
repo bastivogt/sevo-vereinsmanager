@@ -267,9 +267,10 @@ def forgot_password(request):
             print("###############################################")
 
             send_mail(
-                    _("SEVO Vereinsmanager - Reset your password"),
+                    _("SEVO Vereinsmanager Passwordreset"),
                     f"Resetlink: {link}",
-                    settings.EMAIL_HOST_USER,
+                    #settings.EMAIL_HOST_USER,
+                    settings.DEFAULT_FROM_MAIL,
                     [user.email],
                     fail_silently=False,
                 )
